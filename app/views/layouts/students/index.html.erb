@@ -1,3 +1,7 @@
+<h1>Students</h1>
+
+<%= link_to 'New Student', new_student_path, class: 'btn btn-primary' %>
+
 <div id="students">
   <% @students.each do |student| %>
     <%= render student %>
