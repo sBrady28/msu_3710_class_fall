@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-   root "students#jindex"    ## added 24sept2024
+   root "students#index"    ## added 24sept2024
   # root "posts#index"
 end
