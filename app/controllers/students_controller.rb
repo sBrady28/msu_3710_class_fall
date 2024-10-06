@@ -1,41 +1,29 @@
+# This code was added 03Oct2024 added new params to both methods below. check later  SLB
 class StudentsController < ApplicationController
-  before_action :set_student, only: [:show, :edit, :update, :destroy]
-
-  # GET /students or /students.json
+  # This action retrieves all students and assigns them to @students
   def index
     @students = Student.all
   end
 
-  # GET /students/1 or /students/1.json
-  def show
+  # This action initializes a new Student object
+  def new
+    @student = Student.new
   end
 
-  # GET /students/1/edit
-  def edit
-  end
-
-  # PATCH/PUT /students/1 or /students/1.json
-  def update
-    if @student.update(student_params)
-      redirect_to @student, notice: 'Student was successfully updated.'
+  # This action creates a new student with the provided parameters
+  def create
+    @student = Student.new(student_params)
+    if @student.save
+      redirect_to students_path
     else
-      render :edit
+      render :new
     end
-  end
-
-  # DELETE /students/1 or /students/1.json
-  def destroy
-    @student.destroy
-    redirect_to students_url, notice: 'Student was successfully destroyed.'
   end
 
   private
 
-  def set_student
-    @student = Student.find(params[:id])
-  end
-
+  # This method specifies the permitted parameters for a student when creating the object
   def student_params
-    params.require(:student).permit(:name, :age, :email)
+    params.require(:student).permit(:name, :school_email, :major, :minor, :graduation_date)
   end
 end

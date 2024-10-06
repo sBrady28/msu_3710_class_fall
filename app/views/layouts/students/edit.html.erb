@@ -1,0 +1,58 @@
+#added line 3-58 on 06oct24
+
+<h1>Edit Student</h1>
+
+<%= form_with(model: @student, local: true) do |form| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+        <% @student.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :school_email %>
+    <%= form.email_field :school_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :major %>
+    <%= form.text_field :major %>
+  </div>
+
+  <div class="field">
+    <%= form.label :minor %>
+    <%= form.text_field :minor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :graduation_date %>
+    <%= form.date_select :graduation_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Update Student" %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', students_path %>
+
+Strong Parameters:
+Your student_params method already includes the new parameters, which is great.
+Ruby
+
+private
+
+def student_params
+  params.require(:student).permit(:name, :school_email, :major, :minor, :graduation_date)
+end
