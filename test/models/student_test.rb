@@ -19,6 +19,13 @@ class StudentTest < ActiveSupport::TestCase
     end
   end
 
+  test "should not allow duplicate school_email" do
+    student = students(:one)
+    assert_raises ActiveRecord::RecordInvalid do
+      Student.create!(first_name: "Run", last_name: "Time", school_email: student.school_email, major: "CSI", expected_graduation_date: "2024-05-15")
+    end
+  end
+
   test "should raise error when saving student without major" do
     assert_raises ActiveRecord::RecordInvalid do
       Student.create!(first_name: "Nikola", last_name: "Jokic", school_email: "jokic@msudenver.edu", expected_graduation_date: "2024-05-15")
@@ -28,13 +35,6 @@ class StudentTest < ActiveSupport::TestCase
   test "should raise error when saving student without expected graduation date" do
     assert_raises ActiveRecord::RecordInvalid do
       Student.create!(first_name: "Nikola", last_name: "Jokic", school_email: "jokic@msudenver.edu", major: "CS")
-    end
-  end
-
-  test "should not allow duplicate school_email" do
-    student = students(:one)
-    assert_raises ActiveRecord::RecordInvalid do
-      Student.create!(first_name: "Run", last_name: "Time", school_email: student.school_email, major: "CSI", expected_graduation_date: "2024-05-15")
     end
   end
 

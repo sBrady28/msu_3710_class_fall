@@ -73,4 +73,19 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  # Enable serving static files from the `/public` folder
+  config.public_file_server.enabled = true
+
+  # Enable asset debugging
+  config.assets.debug = true
+
+  # Allow assets to be compiled at runtime
+  config.assets.compile = true
+
+  # Disable asset digests in development
+  config.assets.digest = false
+
+  # Suppress logger output for asset requests
+  config.assets.quiet = true
 end
