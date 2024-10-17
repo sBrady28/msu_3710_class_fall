@@ -69,7 +69,11 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter = :resque
+<<<<<<< HEAD
   # config.active_job.queue_name_prefix = "projecttest_production"
+=======
+  # config.active_job.queue_name_prefix = "name_production"
+>>>>>>> a1b933c0137bb29b8215aeb933d0f80dc32aaa48
 
   config.action_mailer.perform_caching = false
 
@@ -94,6 +98,7 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+<<<<<<< HEAD
 
     # Enable serving static files from the `/public` folder
     config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
@@ -159,4 +164,6 @@ Rails.application.configure do
     # config.hosts = [
     #   "example.com"
     # ]
+=======
+>>>>>>> a1b933c0137bb29b8215aeb933d0f80dc32aaa48
 end

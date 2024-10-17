@@ -73,6 +73,7 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+<<<<<<< HEAD
 
   # Enable serving static files from the `/public` folder
   config.public_file_server.enabled = true
@@ -88,4 +89,6 @@ Rails.application.configure do
 
   # Suppress logger output for asset requests
   config.assets.quiet = true
+=======
+>>>>>>> a1b933c0137bb29b8215aeb933d0f80dc32aaa48
 end

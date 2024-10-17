@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+<<<<<<< HEAD
+=======
+# msu_3710_class_fall
+# msu_3710_class_fall
+>>>>>>> a1b933c0137bb29b8215aeb933d0f80dc32aaa48
